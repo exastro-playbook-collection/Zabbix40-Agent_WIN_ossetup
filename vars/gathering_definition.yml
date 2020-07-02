@@ -1,0 +1,7 @@
+---
+command:
+  - tasklist /FI "SERVICES eq Zabbix Agent"
+  - Get-WmiObject Win32_Service -filter "Name='Zabbix Agent'"
+file:
+  - C:\Program Files\zabbix_agent\zabbix_agentd.log
+

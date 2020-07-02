@@ -1,0 +1,32 @@
+---
+# 管理対象マシンへzabbix_agentd.confのチューニング
+
+## ZabbixAgentサービス自動起動設定
+
+  - name: zabbix agent service auto start setting
+    win_service:
+      name: "Zabbix Agent"
+      start_mode: auto
+    when:
+      - VAR_Zabbix40AG_WIN_Enable in [True,False]
+      - VAR_Zabbix40AG_WIN_Enable == True
+
+## ZabbixAgentサービス手動起動設定
+
+  - name: zabbix agent service manual start setting
+    win_service:
+      name: "Zabbix Agent"
+      start_mode: manual
+    when:
+      - VAR_Zabbix40AG_WIN_Enable in [True,False]
+      - VAR_Zabbix40AG_WIN_Enable == False
+
+## ZabbixAgentサービスの再起動
+
+  - name: zabbix agent service start
+    win_service:
+      name: "Zabbix Agent"
+      state: restarted
+    when:
+      - VAR_Zabbix40AG_WIN_Started in [True,False]
+      - VAR_Zabbix40AG_WIN_Started == True

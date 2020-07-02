@@ -1,0 +1,9 @@
+###  vars file for ansible-zabbix-agent
+
+## setting name for zabbix agent install path
+
+  VAR_Zabbix40AG_WIN_Enable: on
+  VAR_Zabbix40AG_WIN_Started: off
+
+  zabbix40ag_WIN_OS_Version_2016: 'Microsoft Windows Server 2016'
+  zabbix40ag_WIN_OS_Version_2012R2: 'Microsoft Windows Server 2012 R2'
